@@ -1,0 +1,16 @@
+body{
+    font-family: Roboto;
+}
+.cardshead{
+    background-image: linear-gradient(#e0e0e0, white);
+    height: 350px;
+    width: 100%;
+    border: 1px solid;
+    border-color: ghostwhite;
+}
+h3,h5{
+    font-family: Roboto-thin;
+}
+h5{
+    color: dimgrey;
+}

@@ -1,0 +1,177 @@
+body{
+    font-family: Roboto;
+}
+
+#introducebg{
+    background-image: url("../images/introduce.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    height: 400px;
+    width:100%;
+}
+h1,h2{
+    color: white;
+    font-family: Roboto-thin;
+    margin-left: 10px;
+    text-shadow: 1px 1px 1px black;
+}
+
+
+#domodream div{
+    margin-top: 10px;
+}
+#rowbackground{
+    height: 688px;
+}
+#interactivehouse{
+    margin-top: 50px;
+    background-image: url(../images/interactivehouse.png);
+    height: 688px;
+    width: 100%;
+    background-size: cover;
+}
+#interactivetitle{
+    font-weight: lighter;
+    text-shadow: none;
+    font-family: Roboto-thin;
+}
+.bigbutton{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: #17a2b8;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    margin: 0!important;
+}
+a #bigbutton:hover{
+    box-shadow: none;
+}
+#ahide{
+    position: absolute;
+    left:50%;
+    top: 145%;
+    z-index: 2;
+}
+#ashow{
+    position: absolute;
+    left: 50%;
+    top:145%;
+    z-index: 1;
+}
+#backgroundbubbles{
+    display: none;
+    height: 688px;
+}
+
+.popover{
+    top: 130px !important;
+}
+.bubblestext{
+    font-size: 14px;
+    background-color: rgba(255,255,255,0.5);
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: 5px #1d2124;
+    text-align: center;
+}
+#cameratext{
+    position: relative;
+    top: -75%;
+    left:6%;
+    display: none;
+    width: 300px;
+}
+#lighttext{
+    position: absolute;
+    top: 125%;
+    left: 24%;
+    display: none;
+}
+#doortext{
+     position: absolute;
+     top: 133%;
+     left: 40%;
+     display: none;
+ }
+#temperaturetext{
+    position: absolute;
+    top: 97%;
+    left: 50%;
+    display: none;
+}
+#wirelesstext{
+    position: absolute;
+    top: 116%;
+    left: 58%;
+    display: none;
+}
+#musictext{
+     position: absolute;
+     top: 134%;
+     left: 70%;
+     display: none;
+ }
+#windowstext{
+    position: absolute;
+    top: 121%;
+    left: 82%;
+    display: none;
+}
+#watertext{
+    position: absolute;
+    top: 145%;
+    left: 81%;
+    display: none;
+}
+#shieldtext{
+    position: absolute;
+    top: 96%;
+    left: 75%;
+    display: none;
+}
+#rowusephone{
+    background-image: url("../images/usingphone1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    height: 900px;
+}
+#rowusephone h1, #rowcrypted h1{
+    font-family: Roboto-light;
+    text-shadow: 1px 1px 1px black;
+    margin-left: 120px;
+}
+#rowcrypted h1{
+    text-shadow: 2px 2px 1px black;
+}
+#rowusephone h1 p, #rowcrypted h1 p{
+    color: white;
+    font: Roboto-thin;
+    font-weight: lighter;
+    text-shadow: none;
+    margin-top: 20px;
+    font-size: 23px;
+    text-shadow: 1px 1px 1px black;
+}
+#rowcrypted{
+    background-image: url("../images/crypted.jpg");
+    background-size: cover;
+    height: 500px;
+    background-position: bottom;
+}
+#rowgetstarted{
+    background-image: url("../images/night_bg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+}
+#rowgetstarted h1{
+    font-family: Roboto-thin;
+    text-shadow: none;
+    margin-top: 100px;
+}
+#rowgetstarted button{
+    margin-top: 30px;
+}

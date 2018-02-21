@@ -1,0 +1,52 @@
+body{
+    font-family: Roboto-light;
+    text-shadow: 1px 1px black;
+}
+
+video#bgvid {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    background-size: cover;
+}
+#headernav{
+    background-color: rgba (0,0,0,0);
+    
+}
+.navlink{
+    color: white;
+    text-decoration: none;
+}
+.navlink:hover{
+    color: #ffc107;
+    text-decoration: none;
+}
+.menu{
+    border-bottom: 1px solid white;
+}
+#autotext {
+    background-color: rgba (0,0,0,0);
+    text-align: center;
+    color: #fff;
+    padding: 3em;
+}
+.buttonhomepage{
+    background: rgba (100,100,100, 0.5);
+}
+
+footer{
+    color: white;
+    font-size: 11px;
+    height: 400px;
+}
+.dot{
+    font-size: 5px;
+}
+#carousel{
+    margin-top: 30px;
+}
+
+.loginheader{
+    color: white;
+}
+

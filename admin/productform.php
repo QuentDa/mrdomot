@@ -6,7 +6,7 @@ if (isset($_SESSION['is_admin']) AND ($_SESSION['is_admin'] != 1) OR empty($_SES
 
 
 if (isset($_POST['save']) ){
-    $query = $db->prepare('INSERT INTO product (category_id, title, quantity, is_published, price, content) VALUES (?, ?, ?, ?, ?, ?');
+    $query = $db->prepare('INSERT INTO product (category_id, title, quantity, is_published, price, content) VALUES (?, ?, ?, ?, ?, ?)');
     $newProduct = $query->execute(
         [
             $_POST['category_id'],

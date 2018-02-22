@@ -1,12 +1,9 @@
 <?php
-
 require_once 'tools/_db.php';
-
 if (isset($_SESSION['user'])){
     header('location:index.php');
     exit;
 }
-
 if(isset($_POST['login'])) {
     if (empty($_POST['email']) OR empty($_POST['password'])) {
         $message = "Merci de remplir tous les champs";
@@ -15,23 +12,15 @@ if(isset($_POST['login'])) {
         $query->execute(array($_POST['email'], $_POST['password']));
         $user = $query->fetch();
         if ($user) {
-
-            //TADAM !!!
             $_SESSION['is_admin'] = $user['is_admin'];
-            //vois les choses plus simplement, peu importe que le mec qui descend de ta base de donnée soit admin ou pas, tu lui créés son attribut de session avec la valeur de son is_admin (qui vaudra donc 1 pour les admins) ou 0 pour les bouzeux, et voilà tout...
-
-
             $_SESSION['user'] = $user['firstname'];
             header('location:index.php');
-            //je remets le exit, inutile de continuer le script
             exit;
         } else {
             $message = 'Mauvais identifiants';
         }
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -39,25 +28,31 @@ if(isset($_POST['login'])) {
  <head>
  
 	<title>Connexion - Mr.Domot</title>
-   
-   <?php require 'partials/head_assets.php'; ?>
+
+     <meta charset="UTF-8">
+     <meta name="viewport"
+           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/login.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
    
  </head>
- <body class="article-body">
+ <body>
+ <?php require_once 'partials/nav.php'?>
 	<div class="container-fluid">
-		
-		<?php require 'partials/header.php'; ?>
-		
-		<div class="row my-3 article-content">
+		<div class="row">
+			<main class="col-12 login d-flex justify-content-center align-items-center">
 
-			<main class="col-9">
-
-				<div class="tab-content">
-					<div class="tab-pane container-fluid <?php if(isset($_POST['login']) || !isset($_POST['register'])): ?>active<?php endif; ?>" id="login" role="tabpanel">
+				<div class="d-flex justify-content-center align-items-center w-100">
+					<div class="d-flex w-100 h-100 justify-content-center align-items-center tab-pane container-fluid <?php if(isset($_POST['login']) || !isset($_POST['register'])): ?>active<?php endif; ?>" id="login" role="tabpanel">
 					
-						<form action="login.php" method="post" class="p-4 row flex-column">
+						<form action="login.php" method="post" class="w-100 row flex-column">
 						
-							<h4 class="pb-4 col-sm-8 offset-sm-2">Connexion</h4>
+							<h4 class="pb-4 col-sm-8 offset-sm-2">Connectez vous chez vous.</h4>
 
                             <?php if (isset($message)): ?>
                             <?php echo $message; ?>
@@ -86,27 +81,7 @@ if(isset($_POST['login'])) {
 			
 		</div>
 		
-		<?php require 'partials/footer.php'; ?>
-		
 	</div>
  </body>
 </html>
 
-<?php
-//durée de vie d'une session dans le php.ini (en secondes, laisser 0 pour détruire à la fermeture du navigateur) :
-//session.gc_max_lifetime = 600 //ici 600 secondes
-//OU session.lifetime = 600 //identique à l'autre paramètre
-
-//les données se session sont accessibles partout (sur toutes les pages du site), tant que la session existe
-
-//session_start() pour démarer la session liée à l'IP. JAMAIS APRES AVOIR DEJA GENERE DU HTML => en début de fichier, donc
-//$_SESSION variable superglobale des infos en SESSION
-//$_SESSION['firstName'] = 'Maxime';
-//echo $_SESSION['firstName'];
-//session_destroy() pour détruire une session (exemple : déconnexion utilisateur)
-
-//unset() détruit une variable ou une partie d'un tableau
-//unset( $_SESSION["cartProducts"]["2"] ); //supprimer une donnée precise de la session
-//ici on supprimer le produit 2 du panier
-
-?>

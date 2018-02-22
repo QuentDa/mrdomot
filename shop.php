@@ -1,3 +1,12 @@
+<?php
+require_once 'tools/_db.php';
+$query = $db->query('SELECT * FROM category');
+$categories = $query->fetchAll();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,24 +23,7 @@
     <title>MR.DOMOT - Boutique</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><img src="images/test.svg" alt="" width="240px" height="50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="introduce.html">Introduction</a>
-            <a class="nav-item nav-link active" href="shop.html">Produits</a>
-            <a class="nav-item nav-link" href="contact.html">Contact</a>
-            <div class="d-flex justify-content-end" style="width: 700px">
-            <a class="nav-item nav-link" href="#"><i class="fas fa-user"></i></a>
-            <a class="nav-item nav-link" href="#"><i class="fas fa-shopping-cart"></i> Panier (0)</a>
-            </div>
-        </div>
-    </div>
-</nav>
+<?php require_once 'partials/nav.php'?>
 <div id="shopcarousel" class="row no-gutters p-0">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -62,25 +54,24 @@
 </div>
 <div id="cards" class="container-fluid no-gutters p-0">
     <div class="row no-gutters p-0">
+        <?php foreach ($categories as $key => $category): ?>
         <div class="col-md-4 cardshead d-flex flex-column align-items-center justify-content-center">
-            <h3>Ambiance & Éclairage Connectés</h3>
-            <h5>Ampoules, lampes, kits...</h5>
-            <img src="images/cards1.png" alt="" width="35%"><br>
+                <h3><a href="product_list.php?category_id=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a></h3>
+            <h5><a href="product_list.php?category_id=<?php echo $category['id']; ?>"><?php echo $category['description']; ?></a></h5>
+            <img src="images/<?php echo $category['id']; ?>.png" alt="" width="35%"><br>
             <a href="index.html"><button type="button" class="btn btn-outline-secondary"  style="color:">Lire la suite</button></a>
         </div>
-        <div class="col-md-4 cardshead d-flex flex-column align-items-center justify-content-center">
-            <h3>Sécurité et Alarmes Connectées</h3>
-            <h5>Caméra, capteurs de mouvements, alarmes...</h5>
-            <img src="images/cards2.png" alt="" width="35%"><br>
-            <a href="index.html"><button type="button" class="btn btn-outline-secondary"  style="color:">Lire la suite</button></a>
-        </div>
-        <div class="col-md-4 cardshead d-flex flex-column align-items-center justify-content-center">
-            <h3>Box</h3>
-            <h5>Relier tout vos appareils entre eux</h5>
-            <img src="images/box.png" alt="" width="50%"><br>
-            <a href="index.html"><button type="button" class="btn btn-outline-secondary"  style="color:">Lire la suite</button></a>
-        </div>
+        <?php endforeach; ?>
+
     </div>
 </div>
+<footer class=" d-flex flex-column justify-content-center align-items-center bg-dark" style="color: white">
+    <div class="mt-2 mb-2 small font-weight-light d-flex">
+        <p>© 2018. DOMOT GROUP S.A. All rights reserved.</p>
+        <a class="ml-1 navlink" href="">Mentions légales</a>
+        <a class="ml-1 navlink" href="">Contact</a>
+    </div>
+        <img class="mb-3" src="images/test.svg" alt="" width="10%">
+</footer>
 </body>
 </html>

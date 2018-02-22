@@ -1,3 +1,4 @@
+<?php require_once 'tools/_db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,24 +16,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><img src="images/test.svg" alt="" width="240px" height="50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">Accueil <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="introduce.html">Introduction</a>
-            <a class="nav-item nav-link" href="shop.html">Produits</a>
-            <a class="nav-item nav-link" href="contact.html">Contact</a>
-            <div class="d-flex justify-content-end" style="width: 700px">
-                <a class="nav-item nav-link" href="#"><i class="fas fa-user"></i></a>
-                <a class="nav-item nav-link" href="#"><i class="fas fa-shopping-cart"></i> Panier (0)</a>
-            </div>
-        </div>
-    </div>
-</nav>
+<?php require_once 'partials/nav.php'?>
 <div class="container-fluid">
     <div class="row">
         <div id="introducebg">
@@ -107,7 +91,8 @@
 
 <div class="container-fluid">
     <div id="rowusephone" class="row d-flex align-items-center ">
-        <h1>Ayez le contrôle, où que vous soyez,<br> quand vous le souhaitez. Économisez ainsi votre énergie. <br><p>En gérant les volets selon la saison, ainsi que le chauffage, le système domotique vous permet d’économiser de l’énergie,
+        <h1>Ayez le contrôle, où que vous soyez,<br> quand vous le souhaitez. Économisez ainsi votre énergie. <br><p>Vous êtes propriétaire, locataire, personne âgée ou à mobilité réduite? Entrez dans le monde de la maison intelligente. Laissez-nous vous faire découvrir les avantages de la domotique. Automatisez vos appareils et composantes électriques pour une meilleure gestion de l’énergie et améliorez votre quotidien de façon simple et efficace. Avoir le contrôle sur tous les appareils d’une maison (éclairage, chauffage, appareils électroniques, serrure de porte, caméra, etc.), tout cela du bout de vos doigts par l’intermédiaire d’un ordinateur, d’un téléphone intelligent ou d’une interface, (tablette, système d’alarme).</p>
+            <hr><p> En gérant les volets selon la saison, ainsi que le chauffage, le système domotique vous permet d’économiser de l’énergie,
             <br> et donc de l’argent, même si au départ on ne recherchait que le confort en plus. La consommation d’énergie peut être suivie très finement,
             <br> qu’il s’agisse de votre consommation d’électricité, d’eau, ou même de gaz.</p></h1>
     </div>
@@ -123,7 +108,7 @@
 <div class="container-fluid">
     <div id="rowgetstarted" class="row d-flex flex-column align-items-center">
         <h1 class="animated fadeInDown">Alors, on commence ?</h1>
-        <button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" style="color: white">Vers la boutique</button>&nbsp;
+        <a href="shop.php"><button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" style="color: white">Vers la boutique</button></a>
     </div>
 
 

@@ -14,3 +14,12 @@ h3,h5{
 h5{
     color: dimgrey;
 }
+a{
+    color: #6c757d;
+}
+a:hover{
+    text-decoration: none;
+}
+.dot{
+    font-size: 5px;
+}

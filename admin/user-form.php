@@ -8,14 +8,14 @@ if (isset($_SESSION['is_admin']) AND ($_SESSION['is_admin'] != 1) OR empty($_SES
 
 //Si $_POST['save'] existe, cela signifie que c'est un ajout d'utilisateur
 if(isset($_POST['save'])){
-    $query = $db->prepare('INSERT INTO user (firstname, lastname, password, email, is_admin,) VALUES (?, ?, ?, ?, ?');
+    $query = $db->prepare('INSERT INTO user (firstname, lastname, password, email, is_admin) VALUES (?, ?, ?, ?, ?)');
     $newUser = $query->execute(
 		[
 			$_POST['firstname'],
 			$_POST['lastname'],
 			$_POST['password'],
 			$_POST['email'],
-			$_POST['is_admin'],
+			$_POST['is_admin']
 		]
     );
 	//redirection après enregistrement

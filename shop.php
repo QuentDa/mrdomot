@@ -59,19 +59,86 @@ $categories = $query->fetchAll();
                 <h3><a href="product_list.php?category_id=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a></h3>
             <h5><a href="product_list.php?category_id=<?php echo $category['id']; ?>"><?php echo $category['description']; ?></a></h5>
             <img src="images/<?php echo $category['id']; ?>.png" alt="" width="35%"><br>
-            <a href="index.html"><button type="button" class="btn btn-outline-secondary"  style="color:">Lire la suite</button></a>
+            <a href="product_list.php?category_id=<?php echo $category['id']; ?>"><button type="button" class="btn btn-outline-secondary"  style="color:">Voir les produits</button></a>
         </div>
         <?php endforeach; ?>
-
     </div>
 </div>
-<footer class=" d-flex flex-column justify-content-center align-items-center bg-dark" style="color: white">
-    <div class="mt-2 mb-2 small font-weight-light d-flex">
-        <p>© 2018. DOMOT GROUP S.A. All rights reserved.</p>
-        <a class="ml-1 navlink" href="">Mentions légales</a>
-        <a class="ml-1 navlink" href="">Contact</a>
+
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center" id="rates">
+        <h1 class="text-center font-weight-light mt-4">Ils nous ont testés</h1>
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-3">
+                <div id="tb-testimonial" class="testimonial testimonial-default-filled">
+                    <div class="testimonial-section">
+                        Simple, pratique, esthétique, polyvalent ! Je suis ravie de mon achat, je me sens plus en sécurité, je ne suis pas mécontente d'avoir franchis le pas !
+                    </div>
+                    <div class="testimonial-desc">
+                        <img src="images/photo1" alt="" width="100px" height="100px" />
+                        <div class="testimonial-writer">
+                            <div class="testimonial-writer-name">Sophie Rose</div>
+                            <div class="testimonial-writer-designation">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <a href="#" class="testimonial-writer-company">Perpignan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div id="tb-testimonial" class="testimonial testimonial-primary-filled">
+                    <div class="testimonial-section">
+                        Grâce à ma nouvelle installation, je peux quitter ma maison la conscience tranquille, et garder un oeil sur mes animaux grâce aux caméras.
+                    </div>
+                    <div class="testimonial-desc">
+                        <img src="images/photo2.png" alt="" width="100px" height="100px" />
+                        <div class="testimonial-writer">
+                            <div class="testimonial-writer-name">Arthur Delbeck</div>
+                            <div class="testimonial-writer-designation">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="testimonial-writer-company">Rouen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 mb-4">
+                <div id="tb-testimonial" class="testimonial testimonial-info-filled">
+                    <div class="testimonial-section">
+                        Plus besoin de d'avoir un appareil par-ci, un appareil par là, et les télécommandes qui vont avec. Un simple clic sur mon smartphone et le tour est joué!
+                    </div>
+                    <div class="testimonial-desc">
+                        <img src="images/photo3.png" alt="" width="100px" height="100px" />
+                        <div class="testimonial-writer">
+                            <div class="testimonial-writer-name">Nicolas Boisdé</div>
+                            <div class="testimonial-writer-designation">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <a href="#" class="testimonial-writer-company">Paris</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-        <img class="mb-3" src="images/test.svg" alt="" width="10%">
-</footer>
+</div>
+
+<?php require_once 'partials/footer.php'?>
 </body>
 </html>

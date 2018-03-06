@@ -17,10 +17,12 @@ if(isset($_GET['logout']) && isset($_SESSION['user'])){
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <title>MR.DOMOT - Accessoires, équipements de domotique</title>
 </head>
 <body>
-<?php require_once 'partials/nav_home.php'?>
+<?php require_once 'partials/nav.php'?>
 <h1 id="autotext">
     <a class="typewrite navlink" data-period="2000" data-type='[ "Entrez dans un univers de Domotique.", "Unissez High-Tech, et magie.", "Un monde de design, épuré et discret.", "Osez Mr. Domot." ]'>
         <span class="wrap"></span>

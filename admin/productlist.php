@@ -70,9 +70,9 @@ $products = $query->fetchall();
                     <th>#</th>
                     <th>Catégorie</th>
                     <th>Nom</th>
-                    <th>Prix</th>
                     <th>Stock</th>
-                    <th>En ligne ?</th>
+                    <th>En ligne?</th>
+                    <th>Prix</th>
                 </tr>
                 </thead>
                 <tbody>

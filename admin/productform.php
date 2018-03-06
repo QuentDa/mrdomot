@@ -5,7 +5,7 @@ if (isset($_SESSION['is_admin']) AND ($_SESSION['is_admin'] != 1) OR empty($_SES
 }
 
 
-if (isset($_POST['save']) ){
+if (isset($_POST['save']) ) {
     $query = $db->prepare('INSERT INTO product (category_id, title, quantity, is_published, price, content) VALUES (?, ?, ?, ?, ?, ?)');
     $newProduct = $query->execute(
         [
@@ -18,7 +18,44 @@ if (isset($_POST['save']) ){
         ]
 
     );
+
+    if ($newProduct) {
+        if (isset($_FILES['image'])) {
+            $allowed_extensions = array('jpg', 'jpeg', 'gif', 'png');
+
+            $my_file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+            if (in_array($my_file_extension, $allowed_extensions)) {
+                $new_file_name = md5(rand());
+                $destination = '../image/product/' . $new_file_name . '.' . $my_file_extension;
+
+
+                $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+
+                $lastInsertedProductId = $db->lastInsertId();
+
+                $query = $db->prepare('UPDATE product SET
+                    image = :image
+                    WHERE id = :id'
+                );
+                //données du formulaire
+                $resultUpdateImage = $query->execute(
+                    [
+                        'image' => $new_file_name . '.' . $my_file_extension,
+                        'id' => $lastInsertedProductId
+                    ]
+                );
+            }
+        }
+        header('location:productlist.php');
+        exit;
+
+
+    } else {
+        $message = "Impossible d'enregistrer le nouvel article...";
+    }
 }
+
 //Si $_POST['update'] existe, cela signifie que c'est une mise à jour d'utilisateur
 if(isset($_POST['update'])){
 
@@ -28,7 +65,7 @@ if(isset($_POST['update'])){
 		quantity = :quantity,
 		is_published = :is_published,
 		price = :price,
-		content = :content,
+		content = :content
 		WHERE id = :id'
     );
 
@@ -101,15 +138,19 @@ if(isset($_GET['product_id']) && isset($_GET['action']) && $_GET['action'] == 'e
         <select class="form-control" name="category_id">
 
             <?php while ( $category = $query->fetch()) : ?>
-                <option value="<?php echo $category['id']; ?>"><?php echo $category['title']; ?></option>
+                <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
             <?php endwhile; ?>
             <?php $query->closeCursor(); ?> ?>
         </select><br />
 
         <label>Nom du Produit :</label> <input class="form-control" type="text" name="title" <?php if(isset($product)): ?>value="<?php echo $product['title']?>"<?php endif; ?>><br />
-        <label>Prix :</label> <input class="form-control" name="content" <?php if(isset($product)): ?>value="<?php echo $product['price']?>"<?php endif; ?></input><br />
-        <label>Quantité</label> <input class="form-control" name="content" <?php if(isset($product)): ?>value="<?php echo $product['quantity']?>"<?php endif; ?></input><br />
+        <label>Prix :</label> <input class="form-control" name="price" <?php if(isset($product)): ?>value="<?php echo $product['price']?>"<?php endif; ?></input><br />
+        <label>Quantité</label> <input class="form-control" name="quantity" <?php if(isset($product)): ?>value="<?php echo $product['quantity']?>"<?php endif; ?></input><br />
         <label>Description du Produit :</label> <textarea class="form-control" name="content" ><?php if(isset($product)): ?><?php echo $product['content']?><?php endif; ?></textarea><br />
+        <div class="form-group">
+            <label for="summary">Image :</label>
+            <input class="form-control" type="file" name="image" id="image" />
+        </div>
         <label>Mettre en ligne</label>
 
         <select class="form-control" name="is_published">

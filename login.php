@@ -14,6 +14,9 @@ if(isset($_POST['login'])) {
         if ($user) {
             $_SESSION['is_admin'] = $user['is_admin'];
             $_SESSION['user'] = $user['firstname'];
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['cart'] = $product
+
             header('location:index.php');
             exit;
         } else {
@@ -38,6 +41,7 @@ if(isset($_POST['login'])) {
      <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
      <link rel="stylesheet" href="css/login.css">
+     <link rel="stylesheet" href="css/nav.css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
    
  </head>

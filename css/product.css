@@ -1,0 +1,48 @@
+#mainrow{
+    background-color: #eff0f1;
+    height: 600px;
+}
+#catname{
+    margin-top: 80px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    line-height: 52px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #f99c19;
+}
+
+.rates{
+    color: #f99c19;
+    font-size: 14px;
+}
+#ratings{
+    color: #2e6da4;
+    margin-bottom: 0;
+}
+.price{
+    font-size: 30px;
+}
+#AddToCart{
+    background-color: #f99c19;
+    border-radius: 0;
+    border-color: #f99c19;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+}
+#AddToCart:hover{
+    background-color: #d58512;
+}
+.quantity{
+    color: #1c7430;
+}
+.description{
+    font-weight: 100;
+    font-size: 15px;
+}
+.whitespace{
+    height: 100px;
+    width: 100%;
+    background-color: #ffffff;
+}

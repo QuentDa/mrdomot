@@ -1,0 +1,101 @@
+body{
+    font-family: Roboto;
+}
+#principalnav{
+    background-color: #121517;
+    height: 80px;
+    border-bottom: 5px solid #f99c19;
+    color: #838383;
+}
+#shopdropdown{
+    background-color: #121517;
+    font-family: Din Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    text-transform: uppercase;
+}
+.dropdown-menu a{
+    color: #838383;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+.dropdown-divider{
+    border-color: #f99c19;
+}
+.nav-item{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    margin-left: 20px;
+}
+.cardshead{
+    background-image: linear-gradient(#e0e0e0, white);
+    height: 350px;
+    width: 100%;
+    border: 1px solid;
+    border-color: ghostwhite;
+}
+h3,h5{
+    font-family: Roboto-thin;
+}
+h5{
+    color: dimgrey;
+}
+a{
+    color: #6c757d;
+}
+a:hover{
+    text-decoration: none;
+}
+.dot{
+    font-size: 5px;
+}
+li{
+    list-style: none;
+}
+.dropdownlogin{
+    background-color: rgba(40, 40, 40, 0.8);
+    color: gainsboro;
+}
+
+
+.dropdownlogin a{
+    color: whitesmoke;
+}
+
+.navbar-login
+{
+    width: 250px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 40px;
+}
+a:hover{
+    color: #f99c19;
+}
+#cartnumber{
+    color: black;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    background-color: #f99c19;
+    border: 3px solid #f99c19;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: bold;
+}
+#carttext{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-left: 20px;
+}

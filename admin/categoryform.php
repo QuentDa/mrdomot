@@ -19,7 +19,7 @@ if (isset($_POST['save']) ){
 if(isset($_POST['update'])){
 
     $query = $db->prepare('UPDATE category SET
-		name = :name
+		name = :name,
 		description = :description
 		WHERE id = :id'
     );

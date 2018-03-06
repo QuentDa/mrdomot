@@ -11,6 +11,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/introduce.css">
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <title>MR.DOMOT - Introduction</title>
 </head>
@@ -29,10 +30,9 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4"></div>
+    <div class="row d-flex justify-content-center" id="dreamrow">
         <div id="domodream" class="col-md-4 d-flex flex-column justify-content-center text-center animated fadeInLeft">
-            <h3 class="font-weight-light d-flex justify-content-center align-items-center h-100">La domotique, un rêve éxaucé</h3>
+            <h3 class="font-weight-light d-flex justify-content-center align-items-center">La domotique, un rêve éxaucé</h3>
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <div class="d-flex flex-column justify-content-center">
                     <img src="images/wireless.svg" alt="" width="70px">
@@ -52,7 +52,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
 </div>
 <div id="interactivehouse" class="container-fluid">
@@ -110,9 +109,7 @@
         <h1 class="animated fadeInDown">Alors, on commence ?</h1>
         <a href="shop.php"><button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" style="color: white">Vers la boutique</button></a>
     </div>
-
-
-
+</div>
 
 
 
@@ -231,6 +228,6 @@
 
 
 
-
+    <?php require_once 'partials/footer.php'?>
 </body>
 </html>

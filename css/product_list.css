@@ -1,0 +1,36 @@
+#header{
+    height: 150px;
+    background-color: #eff0f1;
+}
+.productpre{
+    text-transform: uppercase;
+    line-height: 52px;
+    font-weight: 100;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+span{
+    color: #f99c19;
+}
+#productcatdesc{
+    text-transform: uppercase;
+    line-height: 52px;
+    font-weight: 100;
+    font-size: 15px;
+    margin-left: 40px;
+    color: dimgrey;
+}
+.price{
+    font-size: 20px;
+}
+.quantity{
+    color: #1c7430;
+}
+#cards{
+    margin-left: 80px;
+}
+
+.card-title:hover{
+    color: #f99c19;
+}

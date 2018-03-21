@@ -19,26 +19,32 @@ if (isset($_POST['save']) ) {
 
     );
 
-    if ($newProduct) {
-        if (isset($_FILES['image'])) {
-            $allowed_extensions = array('jpg', 'jpeg', 'gif', 'png');
+    if($newProduct) {
+        //upload de l'image si image envoyée via le formulaire
+        if(isset($_FILES['image'])){
+            //tableau des extentions que l'on accepte d'uploader
+            $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
+            //extension dufichier envoyé via le formulaire
+            $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
+            //si l'extension du fichier envoyé est présente dans le tableau des extensions acceptées
+            if ( in_array($my_file_extension , $allowed_extensions) ){
 
-            $my_file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-
-            if (in_array($my_file_extension, $allowed_extensions)) {
+                //je génrère une chaîne de caractères aléatoires qui servira de nom de fichier
+                //le but étant de ne pas écraser un éventuel fichier ayant le même nom déjà sur le serveur
                 $new_file_name = md5(rand());
+
+                //destination du fichier sur le serveur (chemin + nom complet avec extension)
                 $destination = '../image/product/' . $new_file_name . '.' . $my_file_extension;
-
-
-                $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-
+                //déplacement du fichier à partir du dossier temporaire du serveur vers sa destination
+                $result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
+                //on récupère l'id du dernier enregistrement en base de données (ici l'article inséré ci-dessus)
                 $lastInsertedProductId = $db->lastInsertId();
 
+                //mise à jour de l'article enregistré ci-dessus avec le nom du fichier image qui lui sera associé
                 $query = $db->prepare('UPDATE product SET
-                    image = :image
-                    WHERE id = :id'
+					image = :image
+					WHERE id = :id'
                 );
-                //données du formulaire
                 $resultUpdateImage = $query->execute(
                     [
                         'image' => $new_file_name . '.' . $my_file_extension,
@@ -47,17 +53,17 @@ if (isset($_POST['save']) ) {
                 );
             }
         }
+
         header('location:productlist.php');
         exit;
-
-
-    } else {
-        $message = "Impossible d'enregistrer le nouvel article...";
+    }
+    else {
+        $message = "Impossible d'enregistrer la nouvelle categorie...";
     }
 }
 
 //Si $_POST['update'] existe, cela signifie que c'est une mise à jour d'utilisateur
-if(isset($_POST['update'])){
+if(isset($_POST['update'])) {
 
     $query = $db->prepare('UPDATE product SET
 		category_id = :category_id,
@@ -82,11 +88,35 @@ if(isset($_POST['update'])){
         ]
     );
 
-    if($result){
+    if ($result) {
+        if (isset($_FILES['image'])) {
+            $allowed_extensions = array('jpg', 'jpeg', 'gif', 'png');
+            $my_file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+            if (in_array($my_file_extension, $allowed_extensions)) {
+
+                //si un fichier est soumis lors de la mise à jour, je commence par supprimer l'ancien du serveur s'il existe
+                if (isset($_POST['current-image'])) {
+                    unlink('../image/product/' . $_POST['current-image']);
+                }
+                $new_file_name = md5(rand());
+                $destination = '../image/product/' . $new_file_name . '.' . $my_file_extension;
+                $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+                $query = $db->prepare('UPDATE category SET
+					image = :image
+					WHERE id = :id'
+                );
+                $resultUpdateImage = $query->execute(
+                    [
+                        'image' => $new_file_name . '.' . $my_file_extension,
+                        'id' => $_POST['id']
+                    ]
+                );
+            }
+        }
         header('location:productlist.php');
         exit;
-    }
-    else{
+    } else {
         $message = 'Erreur.';
     }
 }
@@ -115,8 +145,6 @@ if(isset($_GET['product_id']) && isset($_GET['action']) && $_GET['action'] == 'e
 <body class="index-body">
     <div class="container-fluid">
 
-        <?php require 'partials/header.php'; ?>
-
         <div class="row my-3 index-content">
 
             <?php require 'partials/nav.php'; ?>
@@ -132,7 +160,7 @@ if(isset($_GET['product_id']) && isset($_GET['action']) && $_GET['action'] == 'e
                     </div>
                 <?php endif; ?>
 
-    <form method="post" action="productform.php">
+    <form method="post" action="productform.php" enctype="multipart/form-data">
         <label>Choix de la catégorie</label>
         <?php $query = $db->query('SELECT * FROM category');?>
         <select class="form-control" name="category_id">

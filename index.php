@@ -30,7 +30,7 @@ if(isset($_GET['logout']) && isset($_SESSION['user'])){
 </h1>
 <div class="container-fluid">
     <div class="row">
-        <div class="w-100 d-flex justify-content-center">
+        <div class="modals w-100 d-flex justify-content-center">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" data-target=".bd-example-modal-lg1" style="color: white">Installer</button>&nbsp;
         <button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" data-target=".bd-example-modal-lg2" style="color: white">Configurer</button>&nbsp;

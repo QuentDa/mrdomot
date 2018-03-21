@@ -99,3 +99,17 @@ a:hover{
     font-size: 14px;
     margin-left: 20px;
 }
+
+#searchform{
+    margin-left: 120px;
+}
+#searchbutton{
+    color: #f99c19;
+    border-color: #f99c19;
+}
+#searchbutton:hover{
+    background-color: #d58512;
+}
+#searchform input, #searchbutton{
+    height: 30px;
+}

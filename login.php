@@ -15,7 +15,6 @@ if(isset($_POST['login'])) {
             $_SESSION['is_admin'] = $user['is_admin'];
             $_SESSION['user'] = $user['firstname'];
             $_SESSION['id'] = $user['id'];
-            $_SESSION['cart'] = $product
 
             header('location:index.php');
             exit;

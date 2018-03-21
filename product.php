@@ -48,7 +48,7 @@ exit;
         <div class="row" id="mainrow">
             <div class="col-md-2"></div>
             <div class="col-md-5">
-                <a href="product.php?product_id=<?php echo $product['id']; ?>"><img class="mt-5" src="images/product/<?php echo $product['id']; ?>.jpg" alt="test" width="60%"><br></a>
+                <a href="product.php?product_id=<?php echo $product['id']; ?>"><img id="imgcenter" class="mt-5" src="images/product/<?php echo $product['id']; ?>.jpg" alt="test" width="60%"><br></a>
             </div>
             <div class="col-md-4 mb-5">
                 <a href="product_list.php?category_id=<?php echo $category['id']; ?>"><p id="catname" class="article-category"><?php echo $product['category_name']; ?></p></a>
@@ -69,14 +69,11 @@ exit;
 
                 <button type="button" id="AddToCart" class="btn btn-primary">ajouter au panier</button>
                 <p class="mt-2 small quantity"><?php echo $product['quantity']; ?> restant(s)</p>
+                <hr>
                 <p class="mt-5 description"><?php echo $product['content']; ?></p>
             </div>
             <div class="col-md-1"
         </div>
-    </div>
-
-    <div class="row whitespace">
-
     </div>
 
 

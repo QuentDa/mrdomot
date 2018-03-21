@@ -181,3 +181,29 @@ a #bigbutton:hover{
 #rowgetstarted button{
     margin-top: 30px;
 }
+
+@media (max-width: 990px){
+    .icons{
+        margin-right: 20px;
+        text-align: center;
+    }
+
+    .bigbutton, #ahide, #ashow, #backgroundbubbles {
+        display: none;
+    }
+
+    #rowusephone{
+        background-size: 400px;
+        background-position: top;
+    }
+}
+
+@media (max-width: 580px){
+    #rowusephone h1{
+        font-size: 30px;
+    }
+    #rowusephone h1 p{
+        font-size: 17px;
+    }
+
+}

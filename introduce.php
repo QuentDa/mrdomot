@@ -34,19 +34,19 @@
         <div id="domodream" class="col-md-4 d-flex flex-column justify-content-center text-center animated fadeInLeft">
             <h3 class="font-weight-light d-flex justify-content-center align-items-center">La domotique, un rêve éxaucé</h3>
             <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="d-flex flex-column justify-content-center">
+                <div class="icons d-flex flex-column justify-content-center">
                     <img src="images/wireless.svg" alt="" width="70px">
                     <p class="small"> Sans fil</p>
                 </div>
-                <div class="d-flex flex-column justify-content-center">
+                <div class="icons d-flex flex-column justify-content-center">
                     <img src="images/modularity.svg" alt="" width="70px">
                     <p class="small"> Modularité</p>
                 </div>
-                <div class="d-flex flex-column justify-content-center">
+                <div class="icons d-flex flex-column justify-content-center">
                     <img src="images/ecosystem.svg" alt="" width="70Px">
                     <p class="small"> Éco-Système</p>
                 </div>
-                <div class="d-flex flex-column justify-content-center">
+                <div class="icons d-flex flex-column justify-content-center">
                     <img src="images/design.svg" alt="" width="70px">
                     <p class="small"> Design Épuré</p>
                 </div>
@@ -63,7 +63,7 @@
         <a id="ashow" href=""><div class="bigbutton d-flex justify-content-center align-items-center"><i style="color: white; font-size: 40px" class="fas fa-eye"></i></div></a>
 
         <div id="backgroundbubbles">
-            <img src="images/interactivehousetransparance.png" usemap="#image-map" alt="" height="100%" width="100%">
+            <img id="bubblesopen" src="images/interactivehousetransparance.png" usemap="#image-map" alt="" height="100%" width="100%">
             <p class="bubblestext" id="cameratext">Caméra de Surveillance et capteur de mouvement</p>
             <p class="bubblestext" id="lighttext">Contrôler la luminosité</p>
             <p class="bubblestext" id="doortext">Vérouillez vos portes/fenêtres</p>
@@ -107,7 +107,7 @@
 <div class="container-fluid">
     <div id="rowgetstarted" class="row d-flex flex-column align-items-center">
         <h1 class="animated fadeInDown">Alors, on commence ?</h1>
-        <a href="shop.php"><button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" style="color: white">Vers la boutique</button></a>
+        <a href="product_list.php"><button type="button" class="btn btn-outline-secondary modallauncher" data-toggle="modal" style="color: white">Vers la boutique</button></a>
     </div>
 </div>
 

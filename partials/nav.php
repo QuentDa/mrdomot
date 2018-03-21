@@ -23,8 +23,6 @@ $query = $db->query('SELECT * FROM category');
                     Boutique
                 </a>
                 <div class="dropdown-menu" id="shopdropdown" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./shop.php">Aller à la boutique</a>
-                    <div class="dropdown-divider"></div>
                     <?php while($category = $query->fetch()): ?>
                         <a class="dropdown-item" href="product_list.php?category_id=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a>
                          <div class="dropdown-divider"></div>
@@ -37,10 +35,15 @@ $query = $db->query('SELECT * FROM category');
                 <a class="nav-item nav-link" href="contact.php">Contact</a>
             </li>
 
+            <form id="searchform" class="form-inline" action="search.php" method="post" name="search">
+                <input class="form-control mr-sm-2" type="search" name="search" placeholder="Recherche d'un produit" aria-label="Search">
+                <button id="searchbutton" class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
         </ul>
         <div class="form-inline my-2 my-lg-0 mr-5">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="#" class="dropdown-toggle dropleft mr-5" data-toggle="dropdown">
                     <i class="fas fa-user"></i>
                 </a>
                 <ul class="dropdown-menu dropdownlogin">
@@ -56,7 +59,7 @@ $query = $db->query('SELECT * FROM category');
                                     <?php if (isset($_SESSION['user'])):?>
                                         <p class="loginheader font-weight-bold">Bonjour <?php echo $_SESSION['user'];?></p>
                                         <hr>
-                                        <a class="dropdown-item" href="#">Mon compte</a>
+                                        <a class="dropdown-item" href="./myaccount.php">Mon compte</a>
                                         <a class="dropdown-item" href="#">Vos commandes</a>
                                         <hr>
                                         <?php if (isset($_SESSION['is_admin']) AND $_SESSION['is_admin'] == 1):?>

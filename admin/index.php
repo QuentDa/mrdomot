@@ -16,7 +16,6 @@ if (isset($_SESSION['is_admin']) AND ($_SESSION['is_admin'] != 1) OR empty($_SES
 	</head>
 	<body class="index-body">
 		<div class="container-fluid">
-			<?php require 'partials/header.php'; ?>
 			<div class="row my-3 index-content">
 				<?php require 'partials/nav.php'; ?>
 				<main class="col-9">
@@ -25,7 +24,6 @@ if (isset($_SESSION['is_admin']) AND ($_SESSION['is_admin'] != 1) OR empty($_SES
 					</section>
 				</main>
 			</div>
-			
 		</div>
 	</body>
 </html>

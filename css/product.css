@@ -1,6 +1,6 @@
 #mainrow{
     background-color: #eff0f1;
-    height: 600px;
+    height: 800px;
 }
 #catname{
     margin-top: 80px;
@@ -14,7 +14,7 @@
 
 .rates{
     color: #f99c19;
-    font-size: 14px;
+    font-size: 10px;
 }
 #ratings{
     color: #2e6da4;
@@ -45,4 +45,51 @@
     height: 100px;
     width: 100%;
     background-color: #ffffff;
+}
+
+@media (max-width: 766px){
+    #imgcenter{
+        width: 100%;
+
+    }
+}
+#header{
+    height: 150px;
+    background-color: #eff0f1;
+}
+.productpre{
+    text-transform: uppercase;
+    line-height: 52px;
+    font-weight: 100;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+span{
+    color: #f99c19;
+}
+#productcatdesc{
+    text-transform: uppercase;
+    line-height: 52px;
+    font-weight: 100;
+    font-size: 15px;
+    margin-left: 40px;
+    color: dimgrey;
+}
+.price{
+    font-size: 20px;
+}
+.quantity{
+    color: #1c7430;
+}
+#cards{
+    margin-left: 130px;
+}
+
+.card-title:hover{
+    color: #f99c19;
+}
+#rowsearch{
+    margin-left: 80px;
+    margin-top: 30px;
 }

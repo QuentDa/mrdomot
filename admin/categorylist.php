@@ -45,8 +45,6 @@ $categories = $query->fetchall();
 <body class="index-body">
 <div class="container-fluid">
 
-    <?php require 'partials/header.php'; ?>
-
     <div class="row my-3 index-content">
 
         <?php require 'partials/nav.php'; ?>

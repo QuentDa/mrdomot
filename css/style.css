@@ -50,3 +50,9 @@ footer{
     color: white;
 }
 
+@media (max-width: 880px) {
+    .modals{
+        position: absolute;
+        top: 65%;
+    }
+}

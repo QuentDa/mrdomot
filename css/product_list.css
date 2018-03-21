@@ -34,3 +34,42 @@ span{
 .card-title:hover{
     color: #f99c19;
 }
+
+@media (max-width: 780px){
+
+    .row{
+        justify-content: center;
+        align-items: center;
+    }
+    #cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 610px){
+    #header{
+        height: 150px;
+    }
+    .productpre{
+        font-size: 20px;
+    }
+}
+@media (max-width: 500px){
+    #header{
+        height: 150px;
+    }
+    .productpre{
+        font-size: 16px;
+    }
+}
+@media (max-width: 400px){
+    #header{
+        height: 150px;
+    }
+    .productpre{
+        font-size: 14px;
+    }
+}

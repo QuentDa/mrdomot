@@ -50,6 +50,8 @@ else{ //si PAS de catégorie demandée via un id en URL
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/product_list.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
     <title><?php if(isset($currentCategory)): ?><?php echo $currentCategory['name']; ?><?php else : ?>Tous les produits - <?php endif; ?> MR DOMOT</title>
 </head>
 <body>

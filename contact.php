@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <title>MR.DOMOT - Contact</title>
 </head>
 <body>

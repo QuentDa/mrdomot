@@ -19,7 +19,8 @@ if(isset($_GET['logout']) && isset($_SESSION['user'])){
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <title>MR.DOMOT - Accessoires, équipements de domotique</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+            <title>MR.DOMOT - Accessoires, équipements de domotique</title>
 </head>
 <body>
 <?php require_once 'partials/nav.php'?>

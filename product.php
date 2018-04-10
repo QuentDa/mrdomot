@@ -39,6 +39,8 @@ exit;
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
     <title><?php echo $product['title']; ?> - MR.DOMOT</title>
 </head>
 <body>
